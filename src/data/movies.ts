@@ -1,4 +1,4 @@
-// The five films' facts, one record each. The chip bar lists them; each
+// The films' facts, one record each. The chip bar lists them; each
 // <Film slug> in src/content/report.mdx renders one, with its teaser prose.
 // Posters and cast portraits are imported files, which the bundler inlines —
 // no base64 in source.
@@ -28,8 +28,8 @@ import tomCruise from '../assets/cast/tom-cruise.jpg'
 export interface CastMember {
   name: string
   role: string
-  /** Imported portrait URL. */
-  photo: string
+  /** Imported portrait URL. Optional so new entries can ship before portraits do. */
+  photo?: string
 }
 
 export interface Movie {
@@ -141,5 +141,23 @@ export const MOVIES: Movie[] = [
     trailerId: 'dUw26F0WfLg',
     trailerLabel: 'Original theatrical trailer',
     trailerChannel: '2.8M views on YouTube',
+  },
+  {
+    slug: 'avatar',
+    title: 'Avatar',
+    year: 2009,
+    director: 'James Cameron',
+    runtime: '162 min',
+    rating: 'PG-13',
+    tagline: 'Enter the world of Pandora.',
+    // poster: avatarPoster,
+    cast: [
+      { name: 'Sam Worthington', role: 'Jake Sully' },
+      { name: 'Zoe Saldaña', role: 'Neytiri' },
+      { name: 'Sigourney Weaver', role: 'Dr. Grace Augustine' },
+    ],
+    trailerId: '5PSNL1qE6VY',
+    trailerLabel: 'Official trailer',
+    trailerChannel: '20th Century Studios',
   },
 ]
